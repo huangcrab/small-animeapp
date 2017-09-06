@@ -1,4 +1,4 @@
-anime({
+var playPause = anime({
     targets:'div.box',
     translateY:[{
         value:300,duration:2000
@@ -9,8 +9,14 @@ anime({
         value:'1turn',
         easing:'easeInOutSine'
     },
-    delay: function(el,i,num){return i * 2800}
+    delay: function(el,i,num){return i * 2800},
+    autoplay:false,
+    loop:true
 });
+
+//document.getElementsByClassName('play').item(0).addEventListener('click',playPause.play);
+document.getElementsByClassName('pause').item(0).onclick = playPause.pause;
+document.querySelector('#boxes .play').onclick = playPause.play;
 
 
 
